@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Blog
 from .serializers.common import BlogSerializer
@@ -10,6 +11,7 @@ from .serializers.common import BlogSerializer
 
 
 class BlogListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     # Get All Blogs
     def get(self, request):
@@ -19,6 +21,8 @@ class BlogListView(APIView):
 
 
 class BlogDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+
 
     def get_blog(self, pk):
         try:
