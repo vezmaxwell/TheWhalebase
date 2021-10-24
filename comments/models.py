@@ -3,7 +3,7 @@ from django.db.models.deletion import CASCADE
 
 # Create your models here.
 class Comment(models.Model):
-    title = models.CharField(max_length=50, default=None)   
+    title = models.CharField(max_length=50, default=None, blank=True)   
     text = models.TextField(max_length=300, default=None)
     whale = models.ForeignKey(
         "whales.Whale",

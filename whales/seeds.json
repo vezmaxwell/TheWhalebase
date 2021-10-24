@@ -16,5 +16,23 @@
     "info_3": "",
     "status": 7
   }
+},
+{
+  "model": "whales.whale",
+  "pk": 2,
+  "fields": {
+    "name": "NarwhalTEST",
+    "scientific_name": "Monodon Monoceros",
+    "image": "https://ocean.si.edu/sites/default/files/styles/article_main_image/public/Narwhals_breach%20Glenn%20Williams.jpeg?itok=6h_VwzVJ",
+    "size": "Up to 17 feet",
+    "regions": "Arctic waters of Canada, Greenland, Norway and Russia",
+    "title_1": "The Unicorn of the Sea",
+    "info_1": "A narwhal's spiralled tusk is actually kind of like a tooth. They contain up to 10 million nerve endings, and can grow as much as 10 feet long. Despite their home grown battle swords, narwhal's are known to be a nervous whale species, and studies have shown that human's make them anxious - who can blame them!",
+    "title_2": "Deep Divers",
+    "info_2": "Narwhals are known to dive up to about a mile and a half deep, feeding on mostly halibut, squid and shrimp. Cracks in the ice sheaths above them allow them to poke out for air when they need it. Narwhals are at the top of the food chain. However, they heavily depend on sea ice for their existence, which is being impacted by climate change.",
+    "title_3": "",
+    "info_3": "",
+    "status": 7
+  }
 }
 ]

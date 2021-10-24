@@ -1,2 +1,17 @@
 [
+{
+  "model": "blog.blog",
+  "pk": 1,
+  "fields": {
+    "title": "Welcome!",
+    "image": "",
+    "heading_1": "",
+    "section_1": "Hello and welcome to the first blog post on the whale base. Here, you can share anything you want amongst this small whale loving community. Conservation posts, whale sightings, research - the world is your oyster.",
+    "heading_2": "",
+    "section_2": "",
+    "heading_3": "",
+    "section_3": "",
+    "owner": 1
+  }
+}
 ]

@@ -5,12 +5,12 @@ from django.db.models.deletion import CASCADE
 class Blog(models.Model):
     title = models.CharField(max_length=50)
     image = models.CharField(max_length=300, default=None, blank=True)
-    heading_1 = models.CharField(max_length=100, default=None)
-    section_1 = models.CharField(max_length=2000, default=None)
+    heading_1 = models.CharField(max_length=100, default=None, blank=True)
+    section_1 = models.TextField(max_length=2000, default=None)
     heading_2 = models.CharField(max_length=100, default=None, blank=True)
-    section_2 = models.CharField(max_length=2000, default=None, blank=True)
+    section_2 = models.TextField(max_length=2000, default=None, blank=True)
     heading_3 = models.CharField(max_length=100, default=None, blank=True)
-    section_3 = models.CharField(max_length=2000, default=None, blank=True)
+    section_3 = models.TextField(max_length=2000, default=None, blank=True)
 
     owner = models.ForeignKey(
     "jwt_auth.User",

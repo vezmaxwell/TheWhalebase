@@ -20,7 +20,6 @@ class WhaleListView(APIView):
 
 
 
-
 class WhaleDetailView(APIView):
     permission_classes= (IsAuthenticatedOrReadOnly, )
 
@@ -32,14 +31,9 @@ class WhaleDetailView(APIView):
 
     #  Single Whale
     def get(self, _request, pk):
-        try:
-            whale = Whale.objects.get(pk=pk)
-            print(whale)
-            serialized_whale = PopulatedWhaleSerializer()
-            print(serialized_whale.data)
+            whale = self.get_whale(pk=pk)
+            serialized_whale = PopulatedWhaleSerializer(whale)
             return Response(serialized_whale.data, status=status.HTTP_200_OK)
-        except Whale.DoesNotExist:
-            raise NotFound(detail="Can't find that whale! 🦭")
     
 
     # Delete Whale

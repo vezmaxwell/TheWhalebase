@@ -32,14 +32,9 @@ class BlogDetailView(APIView):
 
     #  Single Blog
     def get(self, _request, pk):
-        try:
-            blog = Blog.objects.get(pk=pk)
-            print(blog)
-            serialized_blog = BlogSerializer()
-            print(serialized_blog.data)
-            return Response(serialized_blog.data, status=status.HTTP_200_OK)
-        except Blog.DoesNotExist:
-            raise NotFound(detail="Can't find that blog! 🦭")
+        blog = Blog.objects.get(pk=pk)
+        serialized_blog = BlogSerializer(blog)
+        return Response(serialized_blog.data, status=status.HTTP_200_OK)
 
     # Delete Blog
     def delete(self, _request, pk):

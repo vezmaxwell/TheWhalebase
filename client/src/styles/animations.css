@@ -1,0 +1,17 @@
+.fade-in{
+  animation: fade .4s ease-in;
+}
+
+.home-fade-in{
+  animation: fade 2s ease-in;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

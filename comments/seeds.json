@@ -1,2 +1,12 @@
 [
+{
+  "model": "comments.comment",
+  "pk": 1,
+  "fields": {
+    "title": "🦄🐋",
+    "text": "One of my fav whales 🐳",
+    "whale": 1,
+    "owner": 1
+  }
+}
 ]

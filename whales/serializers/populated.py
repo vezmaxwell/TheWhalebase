@@ -7,4 +7,4 @@ from status.serializers.common import StatusSerializer
 
 class PopulatedWhaleSerializer(WhaleSerializer):
     comments = CommentSerializer(many=True)
-    status = StatusSerializer(many=True)
+    status = StatusSerializer()

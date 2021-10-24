@@ -1,0 +1,28 @@
+.all-whales-header {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  font-family: $heading-font;
+}
+
+.all-whales-container {
+  display: flex;
+  width: 85vh;
+}
+
+.whale-card {
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.whaleimgbox {
+  height: 250px;
+  width: 250px;
+}
+
+.whalecard-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
