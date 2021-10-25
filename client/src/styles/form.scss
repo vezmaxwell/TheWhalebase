@@ -7,7 +7,6 @@
   font-family: $heading-font;
   text-align: center;
   padding-bottom: 30px;
-  margin-bottom: 20px;
   font-size: 4em;
   color: $dark-blue;
 }
@@ -15,8 +14,6 @@
 form {
   background-color: pink;
   align-items: center;
-  width: 800px;
-  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,8 +21,15 @@ form {
   background-color: $grey-blue;
 }
 
+.login-form {
+  width: 800px;
+  height: 600px;
+}
+
 .signup-form {
   height: 840px;
+  width: 800px;
+  overflow-y: scroll;
 }
 
 // .signup-form-header {

@@ -15,6 +15,8 @@ import SignUp from './components/auth/SignUp'
 import Home from './components/common/Home'
 import Nav from './components/common/Nav'
 
+import Waves from './components/common/Waves'
+
 function App() {
   useEffect(() => {
     const getData = async () => {
@@ -27,6 +29,7 @@ function App() {
   return (
     <BrowserRouter>
     <Nav />
+    
       <Switch>
         <Route exact path="/">
           <Home />

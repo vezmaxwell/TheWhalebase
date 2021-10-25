@@ -30,9 +30,30 @@ const PostBlog = () => {
           </div>
 
           <div className="formfield">
-            <label htmlFor="password">Paragraph</label>
+            <label htmlFor="section_1">Paragraph</label>
             <textarea type="text" name="section_1" id="section_1"  placeholder="Place your text here..." />
           </div>
+
+          <div className="formfield">
+            <label htmlFor="heading_2">Heading</label>
+            <input type="text" name="heading_2" id="heading_2" value={blogPost.heading_2} placeholder="What is this section about?" />
+          </div>
+
+          <div className="formfield">
+            <label htmlFor="section_2">Paragraph</label>
+            <textarea type="text" name="section_2" id="section_2"  placeholder="Place your text here..." />
+          </div>
+
+          <div className="formfield">
+            <label htmlFor="heading_3">Heading</label>
+            <input type="text" name="heading_3" id="heading_3" value={blogPost.heading_3} placeholder="What is this section about?" />
+          </div>
+
+          <div className="formfield">
+            <label htmlFor="section_3">Paragraph</label>
+            <textarea type="text" name="section_3" id="section_3"  placeholder="Place your text here..." />
+          </div>
+
 
           <div className="formfield">
             <button className="form-button">Submit Post</button>

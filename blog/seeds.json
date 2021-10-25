@@ -1,17 +1,1 @@
-[
-{
-  "model": "blog.blog",
-  "pk": 1,
-  "fields": {
-    "title": "Welcome!",
-    "image": "",
-    "heading_1": "",
-    "section_1": "Hello and welcome to the first blog post on the whale base. Here, you can share anything you want amongst this small whale loving community. Conservation posts, whale sightings, research - the world is your oyster.",
-    "heading_2": "",
-    "section_2": "",
-    "heading_3": "",
-    "section_3": "",
-    "owner": 1
-  }
-}
-]
+[{"model": "blog.blog", "pk": 1, "fields": {"title": "Welcome!", "image": "https://www.nhm.ac.uk/content/dam/nhmwww/discover/in-pictures-whales-dolphins-dugongs/arctic-showtime-humpback-whale-underwater-full-width.jpg.thumb.1160.1160.jpg", "heading_1": "", "section_1": "Hello and welcome to the first blog post on the whale base. Here, you can share anything you want amongst this small whale loving community. Conservation posts, whale sightings, research - the world is your oyster.", "heading_2": "", "section_2": "", "heading_3": "", "section_3": "", "owner": 1}}]

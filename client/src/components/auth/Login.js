@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
 
@@ -9,9 +9,15 @@ const Login = () => {
     password: ''
   })
 
+  const [ errors, setErrors ] = useState({
+    password: { message: '' }
+  })
+
+  const [ triggerError, setTrigger ] = useState(false)
+
 // Functions
 
-  // const history = useHistory()
+  const history = useHistory()
 
   const handleChange = (event) => {
     const newObj = { ...formData, [event.target.name]: event.target.value }
@@ -27,10 +33,21 @@ const Login = () => {
     try {
       const { data } = await axios.post('/api/auth/login/', formData)
       setTokenToLocalStorage(data.token)
+
+      // setTimeout(function(){
+      //   history.push('/')
+      // }, 3000)
+
+      history.push('/')
+
       console.log('formdata', formData)
     } catch (error) {
       console.log('ERROR', error)
       console.log('formDATA ERROR', formData)
+      setTrigger(true)
+      if (error.response.errors) setErrors(error.response.errors)
+      console.log('error response errors', error.response.errors)
+      console.log(triggerError)
     }
   }
 
@@ -38,11 +55,11 @@ const Login = () => {
     <div className="form-page">
 
       <div className="form-container center fade-in">
-        
+
         <h1 className="form-header">Login to your account</h1>
 
 
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className="login-form form">
           
           <div className="formfield">
             <label htmlFor="email">Email</label>
@@ -57,12 +74,15 @@ const Login = () => {
           <div className="formfield">
             <label htmlFor="password">Password</label>
             <input onInput={handleChange} type="password" name="password" id="password" value={formData.password} placeholder="Choose a password" />
+          
+            {
+            triggerError ?  
+              errors.password && <p className="errors">Email and password combination incorrect</p>
+              :
+              <p></p>
+            }
+          
           </div>
-
-          {/* <div className="formfield">
-            <label htmlFor="password_confirmation">Confirm Password</label>
-            <input onInput={handleChange} type="password" name="password_confirmation" id="password_confirmation" value={formData.password_confirmation} placeholder="Confirm your password" />
-          </div> */}
 
           <div className="formfield">
             <button className="form-button">Login</button>

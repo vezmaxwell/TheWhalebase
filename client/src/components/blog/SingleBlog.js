@@ -42,7 +42,7 @@ const SingleBlog = () => {
         <p>SINGLE BLOG PAGE</p>
 
         <h2>{blog.title}</h2>
-        <div className="blog-img">{blog.image}</div>
+        <img src={blog.image} alt="" />
         <h3 className="blog-heading">{blog.heading_1}</h3>
         <p className="blog-section">{blog.section_1}</p>
         <h3 className="blog-heading">{blog.heading_2}</h3>

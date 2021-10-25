@@ -1,11 +1,11 @@
-.homepage-container {
-  display: flex;
+.home-waves {
+  position: relative;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  // background-color: yellow;
-  height: calc(100vh - 80px);
-  // height: 65vh; --> for when the waves are added in
+  display: flex;
+}
+
+.homepage-container {
+  position: absolute;
 }
 
 .home-image {
@@ -13,6 +13,18 @@
   width: 600px;
   background-image: url(./images/whaleshome.PNG);
   background-size: cover;
-  object-fit: contain;
-  // background-color: pink;
+  margin-top: 50px;
+  animation: shift 10s infinite;
+}
+
+@keyframes shift {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

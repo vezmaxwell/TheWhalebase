@@ -11,6 +11,7 @@ $darkest-blue: #082238;
 @import './animations.css';
 @import './home.scss';
 @import './singlewhale.scss';
+@import './waves.css';
 
 * {
   font-family: $body-font;
@@ -19,6 +20,7 @@ $darkest-blue: #082238;
   padding: 0px;
   margin: 0px;
   text-decoration: none;
+  // cursor: url('./images/whalecursor.png') 10 3, pointer;
 }
 
 body {
@@ -42,4 +44,8 @@ body {
 
 .light {
   color: $grey-blue;
+}
+
+li, h1 {
+  cursor: pointer;
 }

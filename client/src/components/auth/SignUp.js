@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 const SignUp = () => {
   
-  // const history = useHistory()
+  const history = useHistory()
 
   const [ formData, setFormData ] = useState({
     email: '',
@@ -32,14 +33,14 @@ const SignUp = () => {
 
   // const setTokenToLocalStorage = (token) => {
   //   window.localStorage.setItem('token', token)
-  // } ---> use for logging in straight away
+  // }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log('line 29')
     try {
       await axios.post('/api/auth/register/', formData)
-      // setTokenToLocalStorage(data.token)
+      history.push('/auth/login')
       console.log('formdata try', formData)
     } catch (error) {
       console.log('ERROR', error)
@@ -58,7 +59,7 @@ const SignUp = () => {
   return (
     <div className="form-page">
 
-      <div className="form-container center fade-in">
+      <div className="form-container fade-in">
         
       <h1 className="form-header signup-form-header">Sign up for an account</h1>
 

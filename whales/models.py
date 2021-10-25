@@ -5,6 +5,7 @@ class Whale(models.Model):
     name = models.CharField(max_length=50)
     scientific_name = models.CharField(max_length=100)
     image = models.CharField(max_length=300)
+    image2 = models.CharField(max_length=300, blank=True)
     size = models.CharField(max_length=50)
     regions = models.CharField(max_length=300)
     title_1 = models.CharField(max_length=100, default=None)
