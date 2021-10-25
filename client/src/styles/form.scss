@@ -24,14 +24,19 @@ form {
   background-color: $grey-blue;
 }
 
-.signup-form{
-  height: 800px;
+.signup-form {
+  height: 840px;
 }
+
+// .signup-form-header {
+  // margin-top: 80px;
+// }
 
 .formfield, button {
   width: 70%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 }
 
 label {
@@ -39,12 +44,16 @@ label {
   color: $darkest-blue;
 }
 
-input {
+input, textarea {
   height: 40px;
   border: none;
   padding: 5px;
-  margin: 15px 0px 15px 0px;
+  margin: 15px 0px 0px 0px;
   background-color: $light-blue;
+}
+
+textarea {
+  height: 100px;
 }
 
 .form-button {
@@ -67,4 +76,8 @@ input {
   transition: 0.5s;
 }
 
-
+.errors {
+  font-size: .8em;
+  color: rgb(126, 0, 34);
+  font-style: italic;
+}

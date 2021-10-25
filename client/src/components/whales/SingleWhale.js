@@ -13,7 +13,7 @@ const SingleWhale = () => {
 
   // const [ comments, setComments ] = useState([])
 
-  console.log('Single whale', useParams())
+  // console.log('Single whale', useParams())
 
 
 // Accessing Specific Whale
@@ -23,10 +23,10 @@ const SingleWhale = () => {
       try {
         const { data } = await axios.get(`/api/whales/${id}`)
         setWhale(data)
-        console.log('whale data', data)
+        // console.log('whale data', data)
       } catch (error) {
         setHasError(true)
-        console.log(hasError)
+        // console.log(hasError)
       }
     }
     getWhale()
@@ -40,9 +40,10 @@ const SingleWhale = () => {
   //     try {
   //       const { data } = await axios.get('/api/comments/')
   //       setComments(data)
+  //       console.log(data)
   //     } catch {
   //       setHasError(true)
-  //       console.log(hasError)
+  //       console.log('comments error', hasError)
   //     }
   //   }
   //   getComments()
@@ -83,8 +84,8 @@ const SingleWhale = () => {
           </div>
 
         </div>
-
-    {/* {comments.map(comment => {
+{/* 
+    {comments.map(comment => {
       console.log(comment)
       return (
         comment.owner

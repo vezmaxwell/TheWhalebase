@@ -26,6 +26,7 @@ useEffect(() => {
       setWhales(data)
     } catch (error) {
       setHasError(true)
+      console.log(hasError)
     }
   }
   getData()

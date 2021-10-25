@@ -12,6 +12,7 @@ const SingleBlog = () => {
   const { id } = useParams()
 
   console.log('Single Blog', useParams())
+  console.log('blog data', blog)
 
 
 
@@ -22,7 +23,6 @@ const SingleBlog = () => {
       try {
         const { data } = await axios.get(`/api/blog/${id}`)
         setBlog(data)
-        console.log(blog)
 
       } catch (error) {
         setHasError(true)
@@ -49,7 +49,7 @@ const SingleBlog = () => {
         <p className="blog-section">{blog.section_2}</p>
         <h3 className="blog-heading">{blog.heading_3}</h3>
         <p className="blog-section">{blog.section_3}</p>
-        {/* <h4 className="blog-owner">{blog.owner}</h4> */}
+        <h4 className="blog-owner">{blog.owner}</h4>
 
 
       </div>

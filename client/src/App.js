@@ -7,6 +7,7 @@ import SingleWhale from './components/whales/SingleWhale'
 
 import AllBlogs from './components/blog/AllBlogs'
 import SingleBlog from './components/blog/SingleBlog'
+import PostBlog from './components/blog/PostBlog'
 
 import Login from './components/auth/Login'
 import SignUp from './components/auth/SignUp'
@@ -47,6 +48,9 @@ function App() {
         </Route>
         <Route exact path="/blog/:id">
           <SingleBlog />
+        </Route>
+        <Route exact path="/post">
+          <PostBlog />
         </Route>
       </Switch>
     </BrowserRouter>

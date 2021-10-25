@@ -46,6 +46,10 @@ const Nav = () => {
             <li className="navlinks">Blog</li>
           </Link>
 
+          <Link to='/post'>
+            <li className="navlinks">Post</li>
+          </Link>
+
         </ul>
       </div>
 

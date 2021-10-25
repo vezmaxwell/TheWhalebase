@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 const Login = () => {
 
@@ -11,7 +11,7 @@ const Login = () => {
 
 // Functions
 
-  const history = useHistory()
+  // const history = useHistory()
 
   const handleChange = (event) => {
     const newObj = { ...formData, [event.target.name]: event.target.value }
@@ -20,7 +20,6 @@ const Login = () => {
 
   const setTokenToLocalStorage = (token) => {
     window.localStorage.setItem('token', token)
-    history.push('/')
   }
 
   const handleSubmit = async (event) => {

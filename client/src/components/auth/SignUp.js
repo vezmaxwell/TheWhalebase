@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 const SignUp = () => {
+  
+  // const history = useHistory()
 
   const [ formData, setFormData ] = useState({
     email: '',
@@ -12,6 +14,15 @@ const SignUp = () => {
     password_confirmation: '',
   })
 
+  const [ errors, setErrors ] = useState({
+    email: { message: '' },
+    username: { message: '' },
+    password: { message: '' },
+    password_confirmation: { message: '' }
+  })
+
+  const [ triggerError, setTrigger ] = useState(false)
+
 // Functions
 
   const handleChange = (event) => {
@@ -19,35 +30,51 @@ const SignUp = () => {
     setFormData(newObj)
   }
 
-  const setTokenToLocalStorage = (token) => {
-    window.localStorage.setItem('token', token)
-  }
+  // const setTokenToLocalStorage = (token) => {
+  //   window.localStorage.setItem('token', token)
+  // } ---> use for logging in straight away
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    console.log('line 29')
     try {
-      const { data } = await axios.post('/api/auth/register/', formData)
-      setTokenToLocalStorage(data.token)
-      console.log('formdata', formData)
+      await axios.post('/api/auth/register/', formData)
+      // setTokenToLocalStorage(data.token)
+      console.log('formdata try', formData)
     } catch (error) {
       console.log('ERROR', error)
-      console.log('formDATA', formData)
-
+      console.log('formDATA catch', formData)
+      setTrigger(true)
+      if (error.response.errors) setErrors(error.response.errors)
+      console.log('error response errors', error.response.errors)
+      console.log(triggerError)
     }
   }
+
+  // const checkForErrors = () => {
+
+  // }
 
   return (
     <div className="form-page">
 
       <div className="form-container center fade-in">
         
-      <h1 className="form-header">Sign up for an account</h1>
+      <h1 className="form-header signup-form-header">Sign up for an account</h1>
 
       <form onSubmit={handleSubmit} className="form signup-form">
 
         <div className="formfield">
           <label htmlFor="email">Email</label>
           <input onInput={handleChange} type="email" name="email" id="email" value={formData.email} placeholder="Enter your email" />
+
+          {
+            triggerError ?  
+              errors.password && <p className="errors">Please enter your email</p>
+              :
+              <p></p>
+          }
+
         </div>
 
         <div className="formfield">
@@ -64,16 +91,40 @@ const SignUp = () => {
         <div className="formfield">
           <label htmlFor="username">Username</label>
           <input onInput={handleChange} type="text" name="username" id="username" value={formData.username} placeholder="Choose your username" />
+        
+          {
+            triggerError ?  
+              errors.username && <p className="errors">Please enter a username</p>
+              :
+              <p></p>
+          }
+        
         </div>
 
         <div className="formfield">
           <label htmlFor="password">Password</label>
           <input onInput={handleChange} type="password" name="password" id="password" value={formData.password} placeholder="Choose a password" />
+          
+          {
+            triggerError ?  
+              errors.password && <p className="errors">Min 8 characters. Use a mixture of numbers, letters and special characters.</p>
+              :
+              <p></p>
+          }
+
         </div>
 
         <div className="formfield">
           <label htmlFor="password_confirmation">Confirm Password</label>
           <input onInput={handleChange} type="password" name="password_confirmation" id="password_confirmation" value={formData.password_confirmation} placeholder="Confirm your password" />
+          
+          {
+            triggerError ?  
+              errors.password_confirmation && <p className="errors">Make sure passwords match!</p>
+              :
+              <p></p>
+          }
+
         </div>
 
         <div className="formfield">
