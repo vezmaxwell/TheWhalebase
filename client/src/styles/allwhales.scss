@@ -1,28 +1,42 @@
-.all-whales-header {
-  display: flex;
-  justify-content: center;
-  margin: 50px;
+.whalecard-name {
+  text-align: center;
+  // text-transform: uppercase;
+  margin-bottom: 20px;
   font-family: $heading-font;
+  color: $dark-blue;
 }
 
 .all-whales-container {
-  display: flex;
-  width: 85vh;
+  // background-color: red;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 100px;
 }
 
-.whale-card {
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-}
-
-.whaleimgbox {
+.whaleimg-box {
   height: 250px;
   width: 250px;
+  align-items: center;
 }
 
 .whalecard-img {
   max-height: 100%;
   max-width: 100%;
+  transition: border-radius 0.5s ease-out;
 }
+
+.whalecard-img:hover {
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.whale-card {
+  display: flex;
+  justify-content: center;
+  // background-color: pink;
+}
+
 

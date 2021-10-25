@@ -51,11 +51,9 @@ useEffect(() => {
 
 return (
 <>
-  <h1 className="all-whales-header">All Whales</h1>
-    <div className="all-whales-container">
 
+    <div className="all-whales-container fade-in">
 
-    
   {/* Whale Card */}
       {whales.map(whale => {
         console.log(whale)
@@ -63,12 +61,11 @@ return (
           <>
           <div className="whale-card">
 
-            <div className="whaleimgbox">
-              <img className="whalecard-img" src={whale.image} alt={whale.name} />
-            </div>
-
             <Link to={`/whales/${whale.id}`}>
               <h2 className="whalecard-name">{whale.name}</h2>
+              <div className="whaleimg-box">
+                <img className="whalecard-img" src={whale.image} alt={whale.name} />
+              </div>
             </Link>
           </div>
           </>

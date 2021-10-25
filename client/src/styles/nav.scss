@@ -1,7 +1,7 @@
 .navbar-container {
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .navbar-content {
@@ -22,3 +22,15 @@
   color: $dark-blue;
 }
 
+.thewhalebase-header {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3em;
+  color: $grey-blue;
+}
+
+.thewhalebase-container {
+  position: absolute;
+}

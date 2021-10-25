@@ -59,10 +59,12 @@ input {
   border: none;
   background-color: $darkest-blue;
   color: $light-blue;
+  transition: opacity 1s ease-out;
 }
 
 .form-button:hover {
   opacity: 0.8;
+  transition: 0.5s;
 }
 
 

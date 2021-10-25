@@ -11,11 +11,22 @@ const Nav = () => {
   }, [location.pathname])
 
   return (
-    <div className="navbar-container">
+    <div className="navbar-container home-fade-in">
+      
+      {/* <div className="thewhalebase-container">
+        <h1 className="thewhalebase-header fade-in">The WhaleBase</h1>
+      </div> */}
+
+      
 
       <div className="navbar-content">
+
         
-            <p className="navlinks"><Link to='/'>Home</Link></p>
+        
+        <Link to='/'><h1 className="thewhalebase-header">The Whalebase</h1></Link>
+
+            
+
           
         <ul className="page-links">
 

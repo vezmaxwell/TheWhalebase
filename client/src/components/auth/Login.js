@@ -6,8 +6,7 @@ const Login = () => {
 
   const [ formData, setFormData ] = useState({
     email: '',
-    username: '',
-    password: '',
+    password: ''
   })
 
 // Functions
@@ -50,21 +49,21 @@ const Login = () => {
             <label htmlFor="email">Email</label>
             <input onInput={handleChange} type="email" name="email" id="email" value={formData.email} placeholder="Enter your email" />
           </div>
-
+{/* 
           <div className="formfield">
             <label htmlFor="username">Username</label>
             <input onInput={handleChange} type="text" name="username" id="username" value={formData.username} placeholder="Choose your username" />
-          </div>
+          </div> */}
 
           <div className="formfield">
             <label htmlFor="password">Password</label>
             <input onInput={handleChange} type="password" name="password" id="password" value={formData.password} placeholder="Choose a password" />
           </div>
 
-          <div className="formfield">
+          {/* <div className="formfield">
             <label htmlFor="password_confirmation">Confirm Password</label>
             <input onInput={handleChange} type="password" name="password_confirmation" id="password_confirmation" value={formData.password_confirmation} placeholder="Confirm your password" />
-          </div>
+          </div> */}
 
           <div className="formfield">
             <button className="form-button">Login</button>

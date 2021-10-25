@@ -23,6 +23,7 @@ const SingleWhale = () => {
       try {
         const { data } = await axios.get(`/api/whales/${id}`)
         setWhale(data)
+        console.log('whale data', data)
       } catch (error) {
         setHasError(true)
         console.log(hasError)
@@ -49,28 +50,39 @@ const SingleWhale = () => {
 
   return (
   <>
-    <div className="container">
-      <div className="whale-card">
 
-        {/* Whale Card */}
-        
-          <h2>{whale.name}</h2>
-          <h3>{whale.scientific_name}</h3>
-          <h4>{whale.regions}</h4>
-          <h4>{whale.size}</h4>
-          {/* <h4>{whale.status.status}</h4>
-          <p>{whale.status.status_description}</p> */}
-          <img src={whale.image} alt={whale.name} />
-          <h4>{whale.title_1}</h4>
-          <p>{whale.info_1}</p>
-          <h4>{whale.title_2}</h4>
-          <p>{whale.info_2}</p>
-          <h4>{whale.title_3}</h4>
-          <p>{whale.info_3}</p>
+      {/* Whale Card */}
+      <div className="whalecard">
 
+        <div className="whalename">
+          <h2 className="name">{whale.name}</h2>
+          <h3 className="italic">{whale.scientific_name}</h3>
+        </div>
 
-      </div>
-    </div>
+          
+
+          <div className="img-info">
+            <img className="single-whale-img" src={whale.image} alt={whale.name} />
+
+            <div className="whale-info-container">
+              <h4 className="info"><span className="bold">Regions they roam:</span><br/> {whale.regions}</h4>
+              <h4 className="info"><span className="bold">How big they can get:</span><br/> {whale.size}</h4>
+              {/* <h4 className="info status"><span className="bold">Conservation status: </span>{whale.status.status}</h4>
+              <p className="info status_des italic">{whale.status.status_description}</p> */}
+            </div>
+
+          </div>
+          
+          <div className="whale-description-container">
+            <h4 className="single-whale-title">{whale.title_1}</h4>
+            <p className="single-whale-info">{whale.info_1}</p>
+            <h4 className="single-whale-title">{whale.title_2}</h4>
+            <p className="single-whale-info">{whale.info_2}</p>
+            <h4 className="single-whale-title">{whale.title_3}</h4>
+            <p className="single-whale-info">{whale.info_3}</p>
+          </div>
+
+        </div>
 
     {/* {comments.map(comment => {
       console.log(comment)
