@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { getTokenFromLocalStorage } from '../helpers/auth'
+import ImageUpload from '../helpers/ImageUpload'
 
 // import userIsAuthenticated from '../helpers'
 
@@ -38,6 +39,14 @@ const PostBlog = () => {
     }
   }
 
+  const handleImageUrl = (url) => {
+    try {
+      setBlogPost({ ...blogPost, image: url })
+    } catch (error) {
+      console.log('Image Error', error)
+    }
+  }
+
   return (
     <div className="blog-form-page form-page">
 
@@ -49,8 +58,12 @@ const PostBlog = () => {
         <form onSubmit={handleSubmit} className="form blog-form">
 
           <div className="formfield">
-            <label htmlFor="title">Heading</label>
+            <label htmlFor="title">Title of your blog</label>
             <input onInput={handleChange} type="text" name="title" id="title" value={blogPost.title} placeholder="* What is your blog about?" />
+          </div>
+
+          <div className="formfield">
+            <ImageUpload value={blogPost.image} name="image" handleImageUrl={handleImageUrl} />
           </div>
           
           <div className="formfield">
