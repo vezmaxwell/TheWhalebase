@@ -15,21 +15,28 @@ form {
   background-color: pink;
   align-items: center;
   display: flex;
+  width: 800px;
   flex-direction: column;
   justify-content: center;
   box-shadow: 10px 10px $dark-blue;
   background-color: $grey-blue;
 }
 
+.blog-container {
+  margin-top: 250px;
+}
+
 .login-form {
-  width: 800px;
   height: 600px;
 }
 
 .signup-form {
   height: 840px;
-  width: 800px;
   overflow-y: scroll;
+}
+
+.blog-form {
+  height: 1200px;
 }
 
 // .signup-form-header {

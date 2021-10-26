@@ -14,17 +14,17 @@
   background-image: url(./images/whaleshome.PNG);
   background-size: cover;
   margin-top: 50px;
-  animation: shift 10s infinite;
+  // animation: shift 10s infinite;
 }
 
-@keyframes shift {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(2deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
+// @keyframes shift {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   50% {
+//     transform: rotate(2deg);
+//   }
+//   100% {
+//     transform: rotate(0deg);
+//   }
+// }

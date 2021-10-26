@@ -1,5 +1,4 @@
 from django.core import exceptions
-from django.utils.translation import pgettext_lazy
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth import get_user_model
@@ -16,7 +15,7 @@ class JWTAuthentication(BasicAuthentication):
         if not header:
             return None
             
-        if not header.startsWith('Bearer'):
+        if not header.startswith('Bearer'):
             raise PermissionDenied(detail='Invalid auth token')
 
         token = header.replace('Bearer ', '')

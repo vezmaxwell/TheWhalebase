@@ -1,6 +1,13 @@
+import axios from 'axios'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { getTokenFromLocalStorage } from '../helpers/auth'
+
+// import userIsAuthenticated from '../helpers'
 
 const PostBlog = () => {
+
+  const history = useHistory()
 
   const [ blogPost, setBlogPost ] = useState({
     title: '',
@@ -14,44 +21,66 @@ const PostBlog = () => {
     owner: ''
   })
 
-  return (
-    <div className="form-page">
+  const handleChange = (event) => {
+    const newObj = { ...blogPost, [event.target.name]: event.target.value }
+    setBlogPost(newObj)
+  }
 
-      <div className="form-container center fade-in">
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      await axios.post('/api/blog/', blogPost,
+      { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } }
+      )
+      history.push('/api/blog/')
+    } catch (error) {
+      console.log('Blog Error ->', error)
+    }
+  }
+
+  return (
+    <div className="blog-form-page form-page">
+
+      <div className="form-container blog-container center fade-in">
         
         <h1 className="form-header">Post something here!</h1>
 
 
-        <form className="form">
+        <form onSubmit={handleSubmit} className="form blog-form">
+
+          <div className="formfield">
+            <label htmlFor="title">Heading</label>
+            <input onInput={handleChange} type="text" name="title" id="title" value={blogPost.title} placeholder="* What is your blog about?" />
+          </div>
           
           <div className="formfield">
             <label htmlFor="heading_1">Heading</label>
-            <input type="text" name="heading_1" id="heading_1" value={blogPost.heading_1} placeholder="What is this section about?" />
+            <input onInput={handleChange} type="text" name="heading_1" id="heading_1" value={blogPost.heading_1} placeholder="What is this section about?" />
           </div>
 
           <div className="formfield">
             <label htmlFor="section_1">Paragraph</label>
-            <textarea type="text" name="section_1" id="section_1"  placeholder="Place your text here..." />
+            <textarea onInput={handleChange} type="text" name="section_1" id="section_1" value={blogPost.section_1} placeholder="* Place your text here..." />
           </div>
 
           <div className="formfield">
             <label htmlFor="heading_2">Heading</label>
-            <input type="text" name="heading_2" id="heading_2" value={blogPost.heading_2} placeholder="What is this section about?" />
+            <input onInput={handleChange} type="text" name="heading_2" id="heading_2" value={blogPost.heading_2} placeholder="What is this section about?" />
           </div>
 
           <div className="formfield">
             <label htmlFor="section_2">Paragraph</label>
-            <textarea type="text" name="section_2" id="section_2"  placeholder="Place your text here..." />
+            <textarea onInput={handleChange} type="text" name="section_2" id="section_2"  value={blogPost.section_2} placeholder="Place your text here..." />
           </div>
 
           <div className="formfield">
             <label htmlFor="heading_3">Heading</label>
-            <input type="text" name="heading_3" id="heading_3" value={blogPost.heading_3} placeholder="What is this section about?" />
+            <input onInput={handleChange} type="text" name="heading_3" id="heading_3" value={blogPost.heading_3} placeholder="What is this section about?" />
           </div>
 
           <div className="formfield">
             <label htmlFor="section_3">Paragraph</label>
-            <textarea type="text" name="section_3" id="section_3"  placeholder="Place your text here..." />
+            <textarea onInput={handleChange} type="text" name="section_3" id="section_3" value={blogPost.section_3} placeholder="Place your text here..." />
           </div>
 
 
