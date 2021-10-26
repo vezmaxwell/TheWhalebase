@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import { getTokenFromLocalStorage } from '../helpers/auth'
 
 
 
 const SingleBlog = () => {
+
+  const history = useHistory()
 
   const [ blog, setBlog ] = useState([])
   const [ hasError, setHasError ] = useState(false)
@@ -13,7 +16,6 @@ const SingleBlog = () => {
 
   console.log('Single Blog', useParams())
   console.log('blog data', blog)
-
 
 
 // Accessing Specific Whale
@@ -29,10 +31,20 @@ const SingleBlog = () => {
         console.log(hasError)
       }
     }
-
     getBlog()
-
   }, [id, hasError]) 
+
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(
+        `/api/blog/${id}`, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }}
+      )
+      history.push('/api/blog/')
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
   <>
@@ -50,6 +62,7 @@ const SingleBlog = () => {
         <h3 className="blog-heading">{blog.heading_3}</h3>
         <p className="blog-section">{blog.section_3}</p>
         <h4 className="blog-owner">{blog.owner}</h4>
+        <button onClick={handleDelete} className="delete-btn">Delete</button>
 
 
       </div>
