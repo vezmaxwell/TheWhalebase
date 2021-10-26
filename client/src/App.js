@@ -15,7 +15,8 @@ import SignUp from './components/auth/SignUp'
 import Home from './components/common/Home'
 import Nav from './components/common/Nav'
 
-import Waves from './components/common/Waves'
+// import Waves from './components/common/Waves'
+import Loading from './components/common/Loading'
 
 function App() {
   useEffect(() => {
@@ -54,6 +55,9 @@ function App() {
         </Route>
         <Route exact path="/post">
           <PostBlog />
+        </Route>
+        <Route exact path="/loading">
+          <Loading />
         </Route>
       </Switch>
     </BrowserRouter>

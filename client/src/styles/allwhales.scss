@@ -6,6 +6,10 @@
   color: $dark-blue;
 }
 
+.whale-card:hover {
+  opacity: 0.4;
+}
+
 .all-whales-container {
   // background-color: red;
   max-width: 1500px;
@@ -36,7 +40,6 @@
 .whale-card {
   display: flex;
   justify-content: center;
-  // background-color: pink;
 }
 
 

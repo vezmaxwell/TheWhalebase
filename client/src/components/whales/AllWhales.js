@@ -60,13 +60,13 @@ return (
         console.log(whale)
         return (
           <>
-          <div className="whale-card">
+          <div className="whale-card fade-in">
 
             <Link to={`/whales/${whale.id}`}>
-              <h2 className="whalecard-name">{whale.name}</h2>
               <div className="whaleimg-box">
                 <img className="whalecard-img" src={whale.image} alt={whale.name} />
               </div>
+              <h2 className="whalecard-name">{whale.name}</h2>
             </Link>
           </div>
           </>

@@ -82,7 +82,7 @@ textarea {
   transition: opacity 1s ease-out;
 }
 
-.form-button:hover {
+.form-button:hover, .upload-image:hover {
   opacity: 0.8;
   transition: 0.5s;
 }
@@ -91,4 +91,17 @@ textarea {
   font-size: .8em;
   color: rgb(126, 0, 34);
   font-style: italic;
+}
+
+// input[type="file"] {
+//   background-color: red;
+// }
+
+::-webkit-file-upload-button {
+  display: none;
+}
+
+.upload-image {
+  cursor: pointer;
+  border-radius: 0.8em;
 }

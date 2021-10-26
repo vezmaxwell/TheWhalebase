@@ -1,1 +1,17 @@
-[{"model": "blog.blog", "pk": 1, "fields": {"title": "Welcome!", "image": "https://www.nhm.ac.uk/content/dam/nhmwww/discover/in-pictures-whales-dolphins-dugongs/arctic-showtime-humpback-whale-underwater-full-width.jpg.thumb.1160.1160.jpg", "heading_1": "", "section_1": "Hello and welcome to the first blog post on the whale base. Here, you can share anything you want amongst this small whale loving community. Conservation posts, whale sightings, research - the world is your oyster.", "heading_2": "", "section_2": "", "heading_3": "", "section_3": "", "owner": 1}}]
+[
+{
+  "model": "blog.blog",
+  "pk": 4,
+  "fields": {
+    "title": "Hello and welcome",
+    "image": "https://images.unsplash.com/photo-1573770200393-d28efec99581?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2050&q=80",
+    "heading_1": "Join the whale community!",
+    "section_1": "Welcome to The WhaleBase. We love everything whales. If you would like to post something to our blog, sign up for an account and get posting! Feel free to share whatever you want, be it conservation, information,  sightings, even whale art or photography! We hope you love our little whale community.",
+    "heading_2": "",
+    "section_2": "",
+    "heading_3": "",
+    "section_3": "",
+    "owner": 5
+  }
+}
+]

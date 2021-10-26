@@ -1,17 +1,21 @@
 $heading-font: 'Lobster', cursive;
 $body-font: 'Oswald', sans-serif;
 $grey-blue: #8ba6bd;
+$blog-blue: #5c748a;
 $light-blue: #e7f4ff;
 $dark-blue: #1c507c;
 $darkest-blue: #082238;
 
-@import './nav.scss';
-@import './allwhales.scss';
-@import './form.scss';
 @import './animations.css';
-@import './home.scss';
-@import './singlewhale.scss';
+@import './nav.scss';
 @import './waves.css';
+@import './home.scss';
+@import './form.scss';
+@import './allwhales.scss';
+@import './allblogs.scss';
+@import './singlewhale.scss';
+@import './singleblog.scss';
+
 
 * {
   font-family: $body-font;
@@ -48,4 +52,18 @@ body {
 
 li, h1 {
   cursor: pointer;
+}
+
+.loading {
+  height: 100px;
+  width: 100px;
+  background-color: pink;
+}
+
+.loading-img {
+  height: 100%;
+  width: auto;
+  background-image: url('./images/whale_spinner.png');
+  background-color: purple;
+  object-fit: contain;
 }

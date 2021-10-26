@@ -1,0 +1,22 @@
+.blog-page {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-box {
+  width: 70vw;
+  height: 70vh;
+  margin-top: 70px;
+}
+
+.single-blog-title { 
+  color: $dark-blue;
+}
+
+.single-blog-title:hover {
+  color: $grey-blue;
+}
+
+.blog-msg {
+  margin: 0px 0px 50px;
+}

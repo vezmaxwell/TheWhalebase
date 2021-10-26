@@ -3,7 +3,7 @@ import 'dotenv/config'
 import axios from 'axios'
 
 
-const ImageUpload = ({ value, image, handleImageUrl }) => {
+const ImageUpload = ({ value, name, handleImageUrl }) => {
 
   const url = process.env.REACT_APP_CLOUDINARY_URL
   const preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
@@ -19,8 +19,8 @@ const ImageUpload = ({ value, image, handleImageUrl }) => {
 
   return (
     <>
-      <label htmlFor={image}>Blog Image</label>
-      <input type="file" name={image} className="input" onChange={handleChange} />
+      <label htmlFor={name}>Blog Image</label>
+      <input type="file" name={name} id="image-upload" className="upload-image" onChange={handleChange} />
     </>
   )
 

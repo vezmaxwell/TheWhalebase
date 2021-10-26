@@ -52,22 +52,19 @@ useEffect(() => {
 
 return (
 <>
-  <div className="blog-page">
-
-  <h1>All Blogs</h1>
+  <div className="blog-page fade-in">
 
     <div className="blog-box">
+      <p className="blog-msg">Want to post something on our site? Login or sign up for an account! Otherwise click on a post to read more.</p>
 
 {/* Blog Card */}
     {blogs.map(blog => {
       console.log(blog)
       return (
         <>
-
           <Link to={`/blog/${blog.id}`}>
-            <h2>{blog.title}</h2>
+            <h2 className="single-blog-title">{blog.title}</h2>
           </Link>
-          <p>{blog.section_1}</p>
 
         </>
       )

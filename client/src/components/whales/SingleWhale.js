@@ -53,10 +53,10 @@ const SingleWhale = () => {
   <>
 
       {/* Whale Card */}
-      <div className="whalecard">
+      <div className="whalecard fade-in">
 
         <div className="whalename">
-          <h2 className="name">{whale.name}</h2>
+          <h2 className="single-whale-title name">{whale.name}</h2>
           <h3 className="italic">{whale.scientific_name}</h3>
         </div>
 

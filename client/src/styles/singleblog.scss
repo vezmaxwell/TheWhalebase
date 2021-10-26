@@ -1,0 +1,51 @@
+.single-blog-page {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.single-blog-container {
+  max-width: 900px;
+}
+
+.blog-card {
+  width: 100%;
+}
+
+.blog-img {
+  max-height: 700px;
+  width: 100%;
+}
+
+.blog-title {
+  font-family: $heading-font;
+  margin: 100px 0px 50px;
+  font-size: 3em;
+  color: $darkest-blue;
+}
+
+.blog-heading {
+  text-transform: uppercase;
+  margin: 100px;
+  font-weight: 400;
+  color: $dark-blue;
+  font-size: 1.5em;
+}
+
+.blog-section {
+  text-align: justify;
+  color: $blog-blue;
+  font-size: 1.1em;
+}
+
+.delete-btn {
+  height: 30px;
+  width: 120px;
+  font-size: 1em;
+  margin-right: 5px;
+  background-color: $blog-blue;
+}
+
+.blog-btns {
+  display: flex;
+}

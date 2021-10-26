@@ -1,5 +1,5 @@
 .whalecard {
-  background-color: green;
+  // background-color: green;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,11 +7,12 @@
 }
 
 .whale-info-container {
-  background-color: pink;
+  // background-color: pink;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 20%;
 }
 
 .info {
@@ -28,7 +29,7 @@
 }
 
 .whale-description-container {
-  background-color: red;
+  // background-color: red;
   padding: 5vh 20vw;
 }
 
@@ -36,18 +37,34 @@
   font-family: $heading-font;
   font-size: 3em;
   margin: 20px 0px 20px 0px;
+  color: $darkest-blue;
 }
 
 .img-info {
   display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  margin-top: -100px;
+
+}
+
+.single-whale-img {
+  width: 50%;
+  height: auto;
+  margin-right: 50px;
 }
 
 .whalename {
-  background-color: purple;
+  // background-color: purple;
   text-align: center;
 }
 
 .name {
   font-size: 4em;
   font-family: $heading-font;
+}
+
+.single-whale-info {
+  text-align: justify;
 }

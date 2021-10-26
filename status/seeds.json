@@ -1,1 +1,74 @@
-[{"model": "status.status", "pk": 1, "fields": {"status": "Extinct", "status_description": "After exhaustive surveys, the last known individual has died."}}, {"model": "status.status", "pk": 2, "fields": {"status": "Extinct in the wild", "status_description": "When a species survives in captivity, cultivation, or has a naturalized population/s well outside the past range."}}, {"model": "status.status", "pk": 3, "fields": {"status": "Critically Endangered", "status_description": "When a species faces an extremely high risk of extinction in the wild."}}, {"model": "status.status", "pk": 4, "fields": {"status": "Endangered", "status_description": "A species faces a very high risk of extinction in the wild."}}, {"model": "status.status", "pk": 5, "fields": {"status": "Vulnerable", "status_description": "A species faces a high risk of extinction in the wild."}}, {"model": "status.status", "pk": 6, "fields": {"status": "Near threatened", "status_description": "A species likely to qualify for threatened category in the near future, perhaps very quickly depending on local development projects such as rainforest logging."}}, {"model": "status.status", "pk": 7, "fields": {"status": "Least concern", "status_description": "A species is widespread and abundant."}}, {"model": "status.status", "pk": 8, "fields": {"status": "Data deficient", "status_description": "When there is not enough information to assess the risk of extinction (based on distribution/population status)."}}, {"model": "status.status", "pk": 9, "fields": {"status": "Not evaluated", "status_description": "A species has not yet been evaluated against the above criteria."}}]
+[
+{
+  "model": "status.status",
+  "pk": 1,
+  "fields": {
+    "status": "Extinct",
+    "status_description": "After exhaustive surveys, the last known individual has died."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 2,
+  "fields": {
+    "status": "Extinct in the Wild",
+    "status_description": "When a species survives in captivity, cultivation, or has a naturalised population/s well outside the past range."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 3,
+  "fields": {
+    "status": "Critically endangered",
+    "status_description": "When a species faces an extremely high risk of extinction in the wild."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 4,
+  "fields": {
+    "status": "Endangered",
+    "status_description": "A species faces a very high risk of extinction in the wild."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 5,
+  "fields": {
+    "status": "Vulnerable",
+    "status_description": "A species faces a high risk of extinction in the wild."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 6,
+  "fields": {
+    "status": "Near threatened",
+    "status_description": "A species likely to qualify for threatened category in the near future, perhaps very quickly depending on local development projects such as rainforest logging."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 7,
+  "fields": {
+    "status": "Least concern",
+    "status_description": "A species is widespread and abundant."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 8,
+  "fields": {
+    "status": "Data deficient",
+    "status_description": "When there is not enough information to assess the risk of extinction (based on distribution/population status)."
+  }
+},
+{
+  "model": "status.status",
+  "pk": 9,
+  "fields": {
+    "status": "Not evaluated",
+    "status_description": "A species has not yet been evaluated against the above criteria."
+  }
+}
+]
