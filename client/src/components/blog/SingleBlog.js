@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams, useHistory } from 'react-router-dom'
-import { getTokenFromLocalStorage } from '../helpers/auth'
+import { useParams, useHistory, Link } from 'react-router-dom'
+import { getPayload, getTokenFromLocalStorage } from '../helpers/auth'
 
 
 
@@ -12,13 +12,14 @@ const SingleBlog = () => {
   const [ blog, setBlog ] = useState([])
   const [ hasError, setHasError ] = useState(false)
 
+
   const { id } = useParams()
 
   console.log('Single Blog', useParams())
   console.log('blog data', blog)
 
 
-// Accessing Specific Whale
+// Accessing Specific Blog
 
   useEffect(() => {
     const getBlog = async () => {
@@ -35,16 +36,26 @@ const SingleBlog = () => {
   }, [id, hasError]) 
 
 
+
+// Handle Delete of Blog 
+
   const handleDelete = async () => {
     try {
       await axios.delete(
         `/api/blog/${id}`, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }}
       )
-      history.push('/api/blog/')
+      history.push('/loading')
     } catch (error) {
       console.log(error)
     }
   }
+
+  const userIsOwner = (owner) => {
+    const payload = getPayload()
+    if (!payload) return
+    return owner === payload.sub
+  }
+
 
   return (
   <div className="single-blog-page fade-in">
@@ -53,10 +64,13 @@ const SingleBlog = () => {
 
         <h2 className="blog-title">{blog.title}</h2>
 
-        <div className="blog-btns">
-          <button onClick={handleDelete} className="delete-btn form-button">Delete Post</button>
-          <button className="delete-btn form-button">Edit Post</button>
-        </div>
+        {
+          userIsOwner(blog.owner) &&
+            <div className="blog-btns">
+              <button onClick={handleDelete} className="delete-btn form-button">Delete Post</button>
+              <Link to = {`/blog/edit/${id}`}> <button className="delete-btn form-button">Edit Post</button> </Link>
+            </div>
+        }
 
         
         <img className="blog-img" src={blog.image} alt="" />

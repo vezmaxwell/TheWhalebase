@@ -11,43 +11,21 @@ const SingleWhale = () => {
 
   const { id } = useParams()
 
-  // const [ comments, setComments ] = useState([])
 
-  // console.log('Single whale', useParams())
-
-
-// Accessing Specific Whale
 
   useEffect(() => {
     const getWhale = async () => {
       try {
         const { data } = await axios.get(`/api/whales/${id}`)
         setWhale(data)
-        // console.log('whale data', data)
       } catch (error) {
         setHasError(true)
-        // console.log(hasError)
+        console.log(hasError)
       }
     }
     getWhale()
-  }, [id, hasError]) 
+  }, [id]) 
 
-
-// Accessing Comments
-
-  // useEffect(() => {
-  //   const getComments = async () => {
-  //     try {
-  //       const { data } = await axios.get('/api/comments/')
-  //       setComments(data)
-  //       console.log(data)
-  //     } catch {
-  //       setHasError(true)
-  //       console.log('comments error', hasError)
-  //     }
-  //   }
-  //   getComments()
-  // }, [])
 
   return (
   <>

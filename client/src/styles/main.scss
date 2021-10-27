@@ -55,15 +55,18 @@ li, h1 {
 }
 
 .loading {
-  height: 100px;
-  width: 100px;
-  background-color: pink;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 300px;
 }
 
 .loading-img {
   height: 100%;
   width: auto;
-  background-image: url('./images/whale_spinner.png');
-  background-color: purple;
-  object-fit: contain;
+  background-image: url('./images/fishloading.png');
+  object-fit: fill;
+  background-size: cover;
+  animation: spin 13s infinite;
 }
+

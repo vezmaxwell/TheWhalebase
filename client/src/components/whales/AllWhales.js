@@ -8,6 +8,7 @@ const AllWhales = () => {
 
 const [ whales, setWhales ] = useState([])
 const [ hasError, setHasError ] = useState(false)
+const [ search, setSearch ] = useState('')
 
 const { id } = useParams()
 
@@ -30,9 +31,11 @@ useEffect(() => {
     }
   }
   getData()
-}, [])
+}, [hasError])
 
-
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
+  }
 
 // Accessing Specific Whale
 
@@ -51,9 +54,15 @@ useEffect(() => {
 
 
 return (
-<>
+<div className="all-whale-page">
 
+    <div className="search">
+      <input onInput={handleSearch} type="text" placeholder="Search Whales" />
+    </div>
+      
     <div className="all-whales-container fade-in">
+
+
 
   {/* Whale Card */}
       {whales.map(whale => {
@@ -75,7 +84,7 @@ return (
 
     </div> 
 
-</>
+</div>
 )
 
 }

@@ -30,7 +30,7 @@ useEffect(() => {
     }
   }
   getData()
-}, [])
+}, [hasError])
 
 
 

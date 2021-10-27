@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { getTokenFromLocalStorage } from '../helpers/auth'
 import ImageUpload from '../helpers/ImageUpload'
 
@@ -9,8 +9,6 @@ import ImageUpload from '../helpers/ImageUpload'
 const PostBlog = () => {
 
   const history = useHistory()
-
-  // const { latestPost } = useParams()
 
   const [ blogPost, setBlogPost ] = useState({
     title: '',
@@ -35,7 +33,7 @@ const PostBlog = () => {
       await axios.post('/api/blog/', blogPost,
       { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` } }
       )
-      history.push('/api/blog/')
+      history.push('/blog/')
     } catch (error) {
       console.log('Blog Error ->', error)
     }

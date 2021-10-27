@@ -7,7 +7,7 @@ const Loading = () => {
 
   setTimeout(() => {
     return history.push('/')
-  }, 2000)
+  }, 3000)
 
   return (
     <>

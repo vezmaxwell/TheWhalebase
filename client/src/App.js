@@ -8,6 +8,7 @@ import SingleWhale from './components/whales/SingleWhale'
 import AllBlogs from './components/blog/AllBlogs'
 import SingleBlog from './components/blog/SingleBlog'
 import PostBlog from './components/blog/PostBlog'
+import EditBlog from './components/blog/EditBlog'
 
 import Login from './components/auth/Login'
 import SignUp from './components/auth/SignUp'
@@ -26,6 +27,7 @@ function App() {
     }
     getData()
 })
+
 
   return (
     <BrowserRouter>
@@ -55,6 +57,9 @@ function App() {
         </Route>
         <Route exact path="/post">
           <PostBlog />
+        </Route>
+        <Route exact path="/blog/edit/:id">
+          <EditBlog />
         </Route>
         <Route exact path="/loading">
           <Loading />
