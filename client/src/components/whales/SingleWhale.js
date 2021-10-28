@@ -40,7 +40,7 @@ const SingleWhale = () => {
 
         <div className="whalename">
           <h2 className="single-whale-title name">{whale.name}</h2>
-          <h3 className="italic">{whale.scientific_name}</h3>
+          <h3 className="italic sci-name">{whale.scientific_name}</h3>
         </div>
 
           
@@ -49,9 +49,9 @@ const SingleWhale = () => {
             <img className="single-whale-img" src={whale.image} alt={whale.name} />
 
             <div className="whale-info-container">
-              <h4 className="info"><span className="bold">Regions they roam:</span><br/> {whale.regions}</h4>
-              <h4 className="info"><span className="bold">How big they can get:</span><br/> {whale.size}</h4>
-              <h4 className="info status"><span className="bold">Conservation status: </span>{whale.status.status}</h4>
+              <h4 className="info"><span className="bold info-header">Regions they roam:</span><br/> {whale.regions}</h4>
+              <h4 className="info"><span className="bold info-header">How big they can get:</span><br/> {whale.size}</h4>
+              <h4 className="info status"><span className="bold info-header">Conservation status: </span>{whale.status.status}</h4>
               <p className="info status_des italic">{whale.status.status_description}</p>
             </div>
 

@@ -69,7 +69,7 @@ const Login = () => {
 
           <div className="formfield">
             <label htmlFor="password">Password</label>
-            <input onInput={handleChange} type="password" name="password" id="password" value={formData.password} placeholder="Choose a password" />
+            <input onInput={handleChange} type="password" name="password" id="password" value={formData.password} placeholder="Enter your password" />
           
             {
             triggerError ?  

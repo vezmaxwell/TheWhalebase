@@ -18,6 +18,7 @@
 .info {
   margin: 50px 0px;  
   width: 100%;
+  color: $blog-blue;
 }
 
 .status {
@@ -26,7 +27,7 @@
 
 .status_des {
   margin: 0;
-  color: $blog-blue;
+  color: $grey-blue;
 }
 
 .whale-description-container {
@@ -38,7 +39,11 @@
   font-family: $heading-font;
   font-size: 3em;
   margin: 50px 0px 40px 0px;
-  color: $darkest-blue;
+  color: $dark-blue;
+}
+
+.sci-name {
+  color: $grey-blue;
 }
 
 .img-info {
@@ -47,7 +52,10 @@
   justify-content: center;
   // align-items: center;
   margin-top: -100px;
+}
 
+.info-header {
+  color: $dark-blue;
 }
 
 .single-whale-img {
@@ -68,4 +76,5 @@
 
 .single-whale-info {
   text-align: justify;
+  color: $darkest-blue;
 }

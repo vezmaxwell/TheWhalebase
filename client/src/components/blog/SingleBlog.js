@@ -16,6 +16,7 @@ const SingleBlog = () => {
   const { id } = useParams()
 
   console.log('Single Blog', useParams())
+
   console.log('blog data', blog)
 
 
