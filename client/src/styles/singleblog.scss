@@ -21,7 +21,7 @@
   font-family: $heading-font;
   margin: 100px 0px 50px;
   font-size: 3em;
-  color: $darkest-blue;
+  color: $dark-blue;
 }
 
 .blog-heading {
@@ -30,6 +30,11 @@
   font-weight: 400;
   color: $dark-blue;
   font-size: 1.5em;
+}
+
+.blog-credit {
+  font-size: 1em;
+  font-weight: 300;
 }
 
 .blog-section {
@@ -48,4 +53,8 @@
 
 .blog-btns {
   display: flex;
+}
+
+.blog-container {
+  margin-top: 300px;
 }

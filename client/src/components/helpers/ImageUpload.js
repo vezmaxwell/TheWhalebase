@@ -5,9 +5,9 @@ import axios from 'axios'
 
 const ImageUpload = ({ value, name, handleImageUrl }) => {
 
-  const url = process.env.REACT_APP_CLOUDINARY_URL
-  const preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
-  console.log(url, preset)
+  // const url = process.env.REACT_APP_CLOUDINARY_URL
+  // const preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET
+  // console.log('url, preset', url, preset)
 
   const handleChange = async (event) => {
     const dataToSend = new FormData()

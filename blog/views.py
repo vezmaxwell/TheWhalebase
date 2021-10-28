@@ -50,9 +50,9 @@ class BlogDetailView(APIView):
     def delete(self, request, pk):
         blog_to_delete = self.get_blog(pk=pk)
         if blog_to_delete.owner != request.user:
-            raise PermissionDenied(detail="Unauthorised")
+            raise PermissionDenied()
         blog_to_delete.delete()
-        raise Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
         
 
     # Update Blog

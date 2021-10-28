@@ -50,7 +50,9 @@ const Nav = () => {
               <li className="navlinks">Post</li>
             </Link>
             
-            <li onClick={handleLogout} className="navlinks logout">Logout</li>
+            <div>
+              <li onClick={handleLogout} className="navlinks logout">Logout</li>
+            </div>
             
           </>
         }

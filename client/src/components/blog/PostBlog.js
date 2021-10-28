@@ -47,10 +47,11 @@ const PostBlog = () => {
     }
   }
 
+
   return (
     <div className="blog-form-page form-page">
 
-      <div className="form-container blog-container center fade-in">
+      <div className="form-container blog-form-container center fade-in">
         
         <h1 className="form-header">Post something here!</h1>
 
@@ -58,8 +59,8 @@ const PostBlog = () => {
         <form onSubmit={handleSubmit} className="form blog-form">
 
           <div className="formfield">
-            <label htmlFor="title">Title of your blog</label>
-            <input onInput={handleChange} type="text" name="title" id="title" value={blogPost.title} placeholder="* What is your blog about?" />
+            <label htmlFor="title">*Title of your blog</label>
+            <input onInput={handleChange} type="text" name="title" id="title" value={blogPost.title} placeholder="What is your blog about?" />
           </div>
 
           <div className="formfield">
@@ -67,13 +68,13 @@ const PostBlog = () => {
           </div>
           
           <div className="formfield">
-            <label htmlFor="heading_1">Heading</label>
-            <input onInput={handleChange} type="text" name="heading_1" id="heading_1" value={blogPost.heading_1} placeholder="What is this section about?" />
+            <label htmlFor="heading_1">Any names/sources?</label>
+            <input onInput={handleChange} type="text" name="heading_1" id="heading_1" value={blogPost.heading_1} placeholder="Who to credit for this?" />
           </div>
 
           <div className="formfield">
-            <label htmlFor="section_1">Paragraph</label>
-            <textarea onInput={handleChange} type="text" name="section_1" id="section_1" value={blogPost.section_1} placeholder="* Place your text here..." />
+            <label htmlFor="section_1">*Paragraph</label>
+            <textarea onInput={handleChange} type="text" name="section_1" id="section_1" value={blogPost.section_1} placeholder="Place your text here..." />
           </div>
 
           <div className="formfield">

@@ -19,8 +19,6 @@ const EditBlog = () => {
     section_2: '',
     heading_3: '',
     section_3: '',
-    owner: '',
-    id: id
   })
 
   console.log('blog', blog)
@@ -29,22 +27,20 @@ const EditBlog = () => {
   useEffect(() => {
     const getBlog = async () => {
       try {
-        const { blogData } = await axios.get(`/api/blog/${id}`, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage}`} } ) 
-        setBlog(blogData)
-        console.log('blog data edit', blogData)
+        const { data } = await axios.get(`/api/blog/${id}`)
+        setBlog(data)
+        console.log('data', data)
       } catch (error) {
-      console.log('edit error', error)
+        console.log(error)
       }
-    } 
+    }
     getBlog()
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []) 
 
-
-  const handleChange = event => {
-    const target = event.target
-    const value = target.type === target.value
-    setBlog({ ...blog, [event.target.name]: value })
+  const handleChange = (event) => {
+    const newObj = { ...blog, [event.target.name]: event.target.value }
+    setBlog(newObj)
   }
 
   const handleImageUrl = (url) => {
@@ -58,8 +54,8 @@ const EditBlog = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      await axios.put( `/api/blog/${id}`, blog, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage}`} } )
-      history.push(`/api/blog/${id}`)
+      await axios.put( `/api/blog/${id}`, blog, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`} } )
+      history.push(`/blog/${id}`)
     } catch (error) {
       console.log('put error', error)
     }

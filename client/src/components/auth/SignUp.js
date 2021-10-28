@@ -59,7 +59,7 @@ const SignUp = () => {
   return (
     <div className="form-page">
 
-        <div className="form-container fade-in">
+        <div className="form-container signup-form-container fade-in">
           
         <h1 className="form-header signup-form-header">Sign up for an account</h1>
 

@@ -70,11 +70,11 @@ useEffect(() => {
 return (
 <div className="all-whale-page">
 
-    <div className="search">
-      <input onChange={handleFilteredWhales} value={search.searchTerm} name="searchTerm" type="text" placeholder="Search Whales" />
+    <div key="search-bar" className="search">
+      <input key="search-input" onChange={handleFilteredWhales} value={search.searchTerm} name="searchTerm" type="text" placeholder="Search Whales" />
     </div>
       
-    <div className="all-whales-container fade-in">
+    <div key="all-container" className="all-whales-container fade-in">
 
 
 
@@ -88,10 +88,10 @@ return (
             <div key={whale.id} className="whale-card fade-in">
   
               <Link to={`/whales/${whale.id}`}>
-                <div className="whaleimg-box">
-                  <img className="whalecard-img" src={whale.image} alt={whale.name} />
+                <div key={whale.scientific_name} className="whaleimg-box">
+                  <img key={whale.image} className="whalecard-img" src={whale.image} alt={whale.name} />
                 </div>
-                <h2 className="whalecard-name">{whale.name}</h2>
+                <h2 key={whale.name} className="whalecard-name">{whale.name}</h2>
               </Link>
             </div>
             </>

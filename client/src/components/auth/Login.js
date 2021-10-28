@@ -34,7 +34,7 @@ const Login = () => {
       const { data } = await axios.post('/api/auth/login/', formData)
       setTokenToLocalStorage(data.token)
 
-      history.push('/loading')
+      history.push('/')
 
       console.log('formdata', formData)
     } catch (error) {
@@ -50,7 +50,7 @@ const Login = () => {
   return (
     <div className="form-page">
 
-      <div className="form-container center fade-in">
+      <div className="form-container login-form-container center fade-in">
 
         <h1 className="form-header">Login to your account</h1>
 

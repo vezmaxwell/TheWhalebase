@@ -24,9 +24,11 @@ const SingleWhale = () => {
       }
     }
     getWhale()
-  }, [id]) 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) 
 
   if (!whale.status) return null
+  
   console.log('status', whale.status.status)
   console.log(whale.status.status_description)
 
@@ -34,7 +36,7 @@ const SingleWhale = () => {
   <>
 
       {/* Whale Card */}
-      <div className="whalecard fade-in">
+      <div className="whalecard single-whale-container fade-in">
 
         <div className="whalename">
           <h2 className="single-whale-title name">{whale.name}</h2>
