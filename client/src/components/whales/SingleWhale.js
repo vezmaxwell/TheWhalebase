@@ -12,12 +12,12 @@ const SingleWhale = () => {
   const { id } = useParams()
 
 
-
   useEffect(() => {
     const getWhale = async () => {
       try {
         const { data } = await axios.get(`/api/whales/${id}`)
         setWhale(data)
+        console.log('data', data)
       } catch (error) {
         setHasError(true)
         console.log(hasError)
@@ -26,6 +26,9 @@ const SingleWhale = () => {
     getWhale()
   }, [id]) 
 
+  if (!whale.status) return null
+  console.log('status', whale.status.status)
+  console.log(whale.status.status_description)
 
   return (
   <>
@@ -46,8 +49,8 @@ const SingleWhale = () => {
             <div className="whale-info-container">
               <h4 className="info"><span className="bold">Regions they roam:</span><br/> {whale.regions}</h4>
               <h4 className="info"><span className="bold">How big they can get:</span><br/> {whale.size}</h4>
-              {/* <h4 className="info status"><span className="bold">Conservation status: </span>{whale.status.status}</h4>
-              <p className="info status_des italic">{whale.status.status_description}</p> */}
+              <h4 className="info status"><span className="bold">Conservation status: </span>{whale.status.status}</h4>
+              <p className="info status_des italic">{whale.status.status_description}</p>
             </div>
 
           </div>

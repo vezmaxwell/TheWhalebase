@@ -41,6 +41,7 @@
 .whalecard-img:hover {
   border-radius: 50%;
   transition: 0.5s;
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
 }
 
 .whale-card {

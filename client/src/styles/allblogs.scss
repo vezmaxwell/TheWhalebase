@@ -11,12 +11,17 @@
 
 .single-blog-title { 
   color: $dark-blue;
+  font-family: $heading-font;
+  margin: 50px 0px 50px;
 }
 
 .single-blog-title:hover {
   color: $grey-blue;
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
 }
 
 .blog-msg {
-  margin: 0px 0px 50px;
+  margin: 50px 0px 100px;
+  font-size: 1.5em;
+  color: $blog-blue;
 }

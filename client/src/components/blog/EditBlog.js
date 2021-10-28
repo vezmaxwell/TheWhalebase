@@ -19,7 +19,8 @@ const EditBlog = () => {
     section_2: '',
     heading_3: '',
     section_3: '',
-    owner: ''
+    owner: '',
+    id: id
   })
 
   console.log('blog', blog)
@@ -30,13 +31,14 @@ const EditBlog = () => {
       try {
         const { blogData } = await axios.get(`/api/blog/${id}`, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage}`} } ) 
         setBlog(blogData)
-        console.log('blog data', blogData)
+        console.log('blog data edit', blogData)
       } catch (error) {
       console.log('edit error', error)
       }
     } 
     getBlog()
-  }, [id])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
 
   const handleChange = event => {

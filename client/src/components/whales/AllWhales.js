@@ -8,13 +8,14 @@ const AllWhales = () => {
 
 const [ whales, setWhales ] = useState([])
 const [ hasError, setHasError ] = useState(false)
-const [ search, setSearch ] = useState('')
+
+const [ search, setSearch ] = useState( { searchTerm: '' } )
+const [ filteredWhales, setFilteredWhales ] = useState([])
 
 const { id } = useParams()
 
 // 
 console.log('All whales', useParams())
-
 
 
 // Accessing Whales API
@@ -33,9 +34,22 @@ useEffect(() => {
   getData()
 }, [hasError])
 
-  const handleSearch = (event) => {
-    setSearch(event.target.value)
+
+useEffect(() => {
+  const regexSearch = new RegExp(search.searchTerm, 'i')
+  setFilteredWhales(whales.filter(whale => {
+    return regexSearch.test(whale.name)
+  }))
+}, [setFilteredWhales, search, whales])
+
+
+  const handleFilteredWhales = (event) => {
+    const newObj = { ...whales, [event.target.name]: event.target.value }
+    console.log(newObj)
+    setSearch(newObj)
   }
+
+
 
 // Accessing Specific Whale
 
@@ -57,7 +71,7 @@ return (
 <div className="all-whale-page">
 
     <div className="search">
-      <input onInput={handleSearch} type="text" placeholder="Search Whales" />
+      <input onChange={handleFilteredWhales} value={search.searchTerm} name="searchTerm" type="text" placeholder="Search Whales" />
     </div>
       
     <div className="all-whales-container fade-in">
@@ -65,22 +79,25 @@ return (
 
 
   {/* Whale Card */}
-      {whales.map(whale => {
-        console.log(whale)
-        return (
-          <>
-          <div className="whale-card fade-in">
-
-            <Link to={`/whales/${whale.id}`}>
-              <div className="whaleimg-box">
-                <img className="whalecard-img" src={whale.image} alt={whale.name} />
-              </div>
-              <h2 className="whalecard-name">{whale.name}</h2>
-            </Link>
-          </div>
-          </>
-        )
-      })}
+      {
+        (filteredWhales.length > 0 ?
+        filteredWhales : whales).map(whale => {
+          console.log(whale)
+          return (
+            <>
+            <div key={whale.id} className="whale-card fade-in">
+  
+              <Link to={`/whales/${whale.id}`}>
+                <div className="whaleimg-box">
+                  <img className="whalecard-img" src={whale.image} alt={whale.name} />
+                </div>
+                <h2 className="whalecard-name">{whale.name}</h2>
+              </Link>
+            </div>
+            </>
+          )
+        })
+      }
 
     </div> 
 

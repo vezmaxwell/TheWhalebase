@@ -42,22 +42,22 @@ class BlogDetailView(APIView):
 
     #  Single Blog
     def get(self, _request, pk):
-        blog = Blog.objects.get(pk=pk)
+        blog = self.get_blog(pk=pk)
         serialized_blog = BlogSerializer(blog)
         return Response(serialized_blog.data, status=status.HTTP_200_OK)
 
     # Delete Blog
     def delete(self, request, pk):
-        blog_to_delete = Blog.objects.get(pk=pk)
+        blog_to_delete = self.get_blog(pk=pk)
         if blog_to_delete.owner != request.user:
             raise PermissionDenied(detail="Unauthorised")
         blog_to_delete.delete()
         raise Response(status=status.HTTP_204_NO_CONTENT)
+        
 
     # Update Blog
-
     def put(self, request, pk):
-        blog_to_update = self.get_whale(pk=pk)
+        blog_to_update = self.get_blog(pk=pk)
         updated_blog = BlogSerializer(blog_to_update, data=request.data)
         if updated_blog.is_valid():
             updated_blog.save()

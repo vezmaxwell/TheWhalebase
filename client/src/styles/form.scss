@@ -75,16 +75,17 @@ textarea {
   text-transform: uppercase;
   width: 100%;
   margin-top: 20px;
-  cursor: pointer;
   border: none;
   background-color: $darkest-blue;
   color: $light-blue;
   transition: opacity 1s ease-out;
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
 }
 
 .form-button:hover, .upload-image:hover {
   opacity: 0.8;
   transition: 0.5s;
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
 }
 
 .errors {
@@ -102,6 +103,6 @@ textarea {
 }
 
 .upload-image {
-  cursor: pointer;
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
   border-radius: 0.8em;
 }

@@ -22,6 +22,11 @@
   color: $dark-blue;
 }
 
+.navlinks:hover, .thewhalebase-header:hover {
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
+  opacity: 0.5;
+}
+
 .thewhalebase-header {
   display: flex;
   justify-content: center;
@@ -36,5 +41,5 @@
 }
 
 .logout {
-  cursor: pointer;
+  cursor: url('./images/whale-cursor-2.png') 10 3, pointer;
 }

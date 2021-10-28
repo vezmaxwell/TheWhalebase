@@ -61,12 +61,12 @@ return (
     {blogs.map(blog => {
       console.log(blog)
       return (
-        <>
+        <div key={blog.id}>
           <Link to={`/blog/${blog.id}`}>
             <h2 className="single-blog-title">{blog.title}</h2>
           </Link>
 
-        </>
+        </div>
       )
     })}
 

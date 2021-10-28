@@ -44,9 +44,9 @@ const SingleBlog = () => {
       await axios.delete(
         `/api/blog/${id}`, { headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }}
       )
-      history.push('/loading')
+      history.push('/whales')
     } catch (error) {
-      console.log(error)
+      console.log('delete error', error)
     }
   }
 
