@@ -21,6 +21,7 @@ const PostBlog = () => {
     section_3: '',
     owner: ''
   })
+  
 
   const handleChange = (event) => {
     const newObj = { ...blogPost, [event.target.name]: event.target.value }

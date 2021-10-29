@@ -6,7 +6,6 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Blog
 from .serializers.common import BlogSerializer
-from .serializers.populated import PopulatedBlogSerializer
 
 # Create your views here.
 
@@ -44,7 +43,7 @@ class BlogDetailView(APIView):
     #  Single Blog
     def get(self, _request, pk):
         blog = self.get_blog(pk=pk)
-        serialized_blog = PopulatedBlogSerializer(blog)
+        serialized_blog = BlogSerializer(blog)
         return Response(serialized_blog.data, status=status.HTTP_200_OK)
 
     # Delete Blog
