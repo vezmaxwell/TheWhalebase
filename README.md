@@ -19,20 +19,40 @@
 -   Google fonts
 - Procreate
 
+
 **Overview**
 
 The aim of The WhaleBase was to create a full stack web application using Python/Django for the backend and React JS for the frontend. I decided to create a whale database that would access my api and display information about certain whales, as well as allow users to post blogs.
 
 **Day 1 - Planning**
+
 The first day was spent planning. I knew I wanted to make a website that contained information about whales, so I needed to plan what my models would look like in the backend of the project. I also needed to come up with an idea and plan for implementing authentication, and decided to go with allowing users to login and post blogs. They would also be able to edit their blog and delete, making use of put, post and delete requests via my api.
 
-<img width="791" alt="Screenshot 2021-11-04 at 21 10 37" src="https://user-images.githubusercontent.com/81028718/140420581-50cb9d90-f0a4-4d8b-8855-418f802a4a68.png">
 
 **Day 2 - 3**
 
 The coding began! The first 2 days were focused on the python/django backend. I mapped out the models for the whale information and the blogs. The routes were also coded including which the user needed to be logged in for to access, such as deleting, posting and editing a blog.
 
-<img width="654" alt="Screenshot 2021-11-04 at 21 11 26" src="https://user-images.githubusercontent.com/81028718/140420686-771631f0-7328-40e4-8c6d-43b9c3e0ba79.png">
+    class  Whale(models.Model):    
+	    name  =  models.CharField(max_length=50)    
+	    scientific_name  =  models.CharField(max_length=100)    
+	    image  =  models.CharField(max_length=300)   
+	    image2  =  models.CharField(max_length=300, blank=True)    
+	    size  =  models.CharField(max_length=50)   
+	    regions  =  models.CharField(max_length=300)    
+	    title_1  =  models.CharField(max_length=100, default=None)    
+	    info_1  =  models.TextField(max_length=2000, default=None)    
+	    title_2  =  models.CharField(max_length=100, default=None, blank=True)    
+	    info_2  =  models.TextField(max_length=2000, default=None, blank=True)    
+	    title_3  =  models.CharField(max_length=100, default=None, blank=True)    
+	    info_3  =  models.TextField(max_length=2000, default=None, blank=True)    
+	    status  =  models.ForeignKey(    
+	    'status.Status',   
+	    related_name="whales",
+	    on_delete=models.CASCADE    
+    )
+    
+ 
 
 **Day 4**
 
@@ -106,12 +126,14 @@ After days of having issues getting my conservation status relationship to displ
 
     if (!whale.status) return  null  
 
+
 **Day 8**
 
 Day 8 consisted of some final small jobs. A re-direct to the blog page once a blog was posted or deleted, final css and making the site responsive. I also did a final seed for my database (almost forgetting the mighty blue whale!).
 
 <img width="994" alt="Screenshot 2021-11-04 at 21 25 05" src="https://user-images.githubusercontent.com/81028718/140422297-92524552-ff3a-4624-b312-4de61bff58e9.png">
   
+
 
 **Strengths and issues**
 
