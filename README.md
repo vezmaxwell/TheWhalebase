@@ -1,5 +1,9 @@
 # **The WhaleBase**
 
+
+<img width="1680" alt="Screenshot 2021-11-04 at 21 01 24" src="https://user-images.githubusercontent.com/81028718/140419439-fe4feca1-736d-4b93-85c8-937c08904191.png">
+
+
 **Technologies Used**
 
 -   HTML 
@@ -18,8 +22,6 @@
 **Overview**
 
 The aim of The WhaleBase was to create a full stack web application using Python/Django for the backend and React JS for the frontend. I decided to create a whale database that would access my api and display information about certain whales, as well as allow users to post blogs.
-
-<img width="1680" alt="Screenshot 2021-11-04 at 21 01 24" src="https://user-images.githubusercontent.com/81028718/140419439-fe4feca1-736d-4b93-85c8-937c08904191.png">
 
 **Day 1 - Planning**
 The first day was spent planning. I knew I wanted to make a website that contained information about whales, so I needed to plan what my models would look like in the backend of the project. I also needed to come up with an idea and plan for implementing authentication, and decided to go with allowing users to login and post blogs. They would also be able to edit their blog and delete, making use of put, post and delete requests via my api.
@@ -60,7 +62,6 @@ I began front end using react, diving into connecting the secure route and authe
 		    errors.password  &&  <p  className="errors">Email and password combination incorrect</p>       
    
 
-<img width="840" alt="Screenshot 2021-11-04 at 21 13 47" src="https://user-images.githubusercontent.com/81028718/140420985-f37675ce-ce44-4168-9c65-d49906a98927.png">
   
 **Day 5**
 
