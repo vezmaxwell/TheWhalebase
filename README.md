@@ -31,7 +31,7 @@ The first day was spent planning. I knew I wanted to make a website that contain
 
 **Day 2 - 3**
 
-The coding began! The first 2 days were focused on the python/django backend. I mapped out the models for the whale information and the blogs. The routes were also coded including which the user needed to be logged in for to access, such as deleting, posting and editing a blog.
+The coding began! The first 2 days were focused on the Python/Django backend. I mapped out the models for the whale information and the blogs. The routes were also coded including which the user needed to be logged in for to access, such as deleting, posting and editing a blog.
 
     class  Whale(models.Model):    
 	    name  =  models.CharField(max_length=50)    
@@ -56,7 +56,7 @@ The coding began! The first 2 days were focused on the python/django backend. I 
 
 **Day 4**
 
-I began front end using react, diving into connecting the secure route and authentication. I made a simple homepage and navbar component and then focused on allowing a user to sign up and login, creating forms for the both of these. I also added in error messages by saving a trigger as a use state, to pop up if the user had input some incorrect information.
+I began front end using React, diving into connecting the secure route and authentication. I made a simple homepage and navbar component and then focused on allowing a user to sign up and login, creating forms for the both of these. I also added in error messages by saving a trigger as a use state, to pop up if the user had input some incorrect information.
 
     const [ errors, setErrors ] =  useState({
 	    password: { message: '' }    
