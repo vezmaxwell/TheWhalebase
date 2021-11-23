@@ -1,5 +1,8 @@
 # **The WhaleBase**
 
+**Overview**
+
+The aim of The WhaleBase was to create a full stack web application using Python/Django for the backend and React JS for the frontend. I decided to create a whale database that would access my api and display information about certain whales, as well as allow users to post blogs.
 
 <img width="1680" alt="Screenshot 2021-11-04 at 21 01 24" src="https://user-images.githubusercontent.com/81028718/140419439-fe4feca1-736d-4b93-85c8-937c08904191.png">
 
@@ -19,10 +22,6 @@
 -   Google fonts
 - Procreate
 
-
-**Overview**
-
-The aim of The WhaleBase was to create a full stack web application using Python/Django for the backend and React JS for the frontend. I decided to create a whale database that would access my api and display information about certain whales, as well as allow users to post blogs.
 
 **Day 1 - Planning**
 
